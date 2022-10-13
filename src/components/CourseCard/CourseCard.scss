@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.coursecard {
+    border: solid 1px black;
+    width:100%;
+    padding: 10px;
+
+    &__img{
+        width: 100%;
+        height: auto;
+        margin-bottom: 1.25rem;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__price {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: lightgray;
+    }
+
+    &__moreinfo{
+        cursor: pointer;
+    }
+
+
+}
