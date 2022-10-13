@@ -1,14 +1,17 @@
 import React from 'react';
 import "./CourseCard.scss";
 
-const CourseCard = () => {
+const CourseCard = ({name, image, description, tagline, id}) => {
+
+  const trimmedDescription = description.substring(0,50) + "...";
+
   return (
     <div className='coursecard'>
-        <img className='coursecard__img' src="" alt="card image" />
-        <h2 className='coursecard__title'>title prop</h2>
-        <p className='coursecard__info'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam cumque harum, culpa voluptatem quo minus unde dolorum ipsa. Ipsam magni quae voluptatem vero iure ad inventore totam ab corrupti. Saepe?</p>
-        <p className='coursecard__price'>price prop</p>
-        <button className='coursecard__moreinfo'>more info</button>
+        <img className='coursecard__img' src="{image}" alt="" />
+        <h3 className='coursecard__title'>{name}</h3>
+        <p className='coursecard__price'>{tagline}</p>
+        <p className='coursecard__info'>{trimmedDescription}</p>
+        <button className='coursecard__moreinfo'>More Info</button>
     </div>
   )
 }
