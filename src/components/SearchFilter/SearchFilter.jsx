@@ -41,10 +41,15 @@ const SearchFilter = ({getSearchValue, courses, setCourses, getCourses, setURL})
 
     //add handle sort to select tag
     <div className='searchfilter'>
+
+    <h3 className='searchfilter__title'>The best cars available here!</h3>
       <input className='searchfilter__search' type="text" placeholder='Search...' onChange={getSearchValue} />
 
-      <div className="searchfilter__dropdown">
-          <select>
+      
+
+      <div>
+          <select className="searchfilter__dropdown" placeholder='Filter'>
+            <option>Filter</option>
             <option>Lowest price</option>
             <option>Alphabetical</option>
             <option>Completion Time</option>

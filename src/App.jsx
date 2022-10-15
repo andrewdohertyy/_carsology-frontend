@@ -11,7 +11,7 @@ function App() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
   const [url, setURL] = useState(
-    "https://api.punkapi.com/v2/beers?per_page=30"
+    "https://api.punkapi.com/v2/beers?per_page=80"
   );
 
   const getCourses = async () => {
@@ -29,7 +29,7 @@ function App() {
   return (
     <Router>
       <>
-          <Nav title={"_carsology"} />
+          <Nav title={"_Carsology"} />
           <Routes>
             <Route
             path="/"

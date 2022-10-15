@@ -2,7 +2,7 @@ import React from "react";
 import "./Nav.scss";
 import { Link } from "react-router-dom";
 import userLogo from "../../assets/icons8-male-user-32.png";
-
+import car from "../../assets/icons8-car-30.png";
 
 const Nav = ({ title }) => {
   // const getCarsFilter = () => {
@@ -42,7 +42,10 @@ const Nav = ({ title }) => {
     <div className="nav">
       <section class="top-nav">
         <Link id="title" to="/">
-          <div className="nav__title">{title}</div>
+          <nav className="nav__title--container">
+            <div className="nav__title">{title}</div>
+            <img className="nav__car" src={car} alt="" />
+          </nav>
         </Link>
         <input id="menu-toggle" type="checkbox" />
         <label class="menu-button-container" for="menu-toggle">

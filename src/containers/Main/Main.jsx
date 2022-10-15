@@ -4,12 +4,13 @@ import SearchFilter from "../../components/SearchFilter/SearchFilter";
 import CardContainer from "../CardContainer/CardContainer";
 import { useState, useEffect } from "react";
 import Pagination from "../../components/Pagination/Pagination";
+import "./Main.scss";
 
 
 const Main = ({courses, getCourses, setURL, setCourses}) => {
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [coursesPerPage] = useState(6);
+  const [coursesPerPage] = useState(18);
   const [searchValue, setSearchValue] = useState("");
 
   const getSearchValue = (e) => {
@@ -29,8 +30,8 @@ const paginate = pageNumber => {
 
 
   return (
-    <div>
-      <Header title={"Find your next car here!"} />
+    <div className="main">
+      <Header title={"_Carsology - Find your next car here!"} />
       <SearchFilter courses={courses} getSearchValue={getSearchValue} setCourses={setCourses} getCourses={getCourses} setURL={setURL}/>
       <CardContainer
         currentCourses={currentCourses}

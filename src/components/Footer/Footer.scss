@@ -1,28 +1,28 @@
 .footer {
     padding: 20px;
     margin-top: 40px;
-    background-color:blue;
-    width: 90vw;
+    background-color: #2d3737;
     text-align: center;
-    color: white;
     width: 100%;
+    border-bottom: solid orange 10px;
 
     &__input {
-        padding: 10px 30px ;
+        padding: 10px 50px 10px 5px ;
         outline: none;
     }
     &__text {
         padding: 20px;
-        
-
+        color: white;
+    
     }
     &__button {
         padding: 10px;
         margin-left: 10px;
         margin-bottom: 10px;
+        margin-top: 10px;
         border: solid white 1px;
         border-radius: 25px;
-        background-color: black;
+        background-color: #2d3737;
         color: white;
     }
 }

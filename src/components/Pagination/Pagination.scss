@@ -1,3 +1,26 @@
-// .pagination {
-//     display: flex;
-// }
+.pagination {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    color: #2d3737;;
+
+    &__items {
+        padding: 10px;
+        justify-content: center;
+        
+    }
+    &__link {
+        border-style :none;
+        background-color: white;
+        font-size: large;
+        cursor: pointer;
+    }
+    &__button {
+        padding: 5px 10px 5px 10px;
+        border-radius: 5px;
+        background-color: white;
+        border: 1px grey solid;
+        cursor: pointer;
+
+    }
+}
