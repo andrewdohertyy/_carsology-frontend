@@ -2,14 +2,16 @@ import React from 'react'
 import CourseCard from '../../components/CourseCard/CourseCard';
 import "./CardContainer.scss";
 
-const CardContainer = ({courses, searchValue}) => {
+const CardContainer = ({searchValue, currentCourses}) => {
 
-  const filterCourses = (courses, searchValue) => {
-    return courses.filter((course) => course.name.toLowerCase().includes(searchValue.toLowerCase()))
+  console.log(currentCourses);
+
+  const filterCourses = (currentCourses, searchValue) => {
+    return currentCourses.filter((course) => course.name.toLowerCase().includes(searchValue.toLowerCase()))
   }
 
-const coursesJSX = (courses) => {
-  return filterCourses(courses, searchValue).map((course, index) => {
+const coursesJSX = (currentCourses) => {
+  return filterCourses(currentCourses, searchValue).map((course, index) => {
     return (
       <div key={index}>
           <CourseCard
@@ -26,7 +28,7 @@ const coursesJSX = (courses) => {
 
   return (
       <div className="container__grid">
-        {coursesJSX(courses)}
+        {coursesJSX(currentCourses)}
       </div>
   );
   }
