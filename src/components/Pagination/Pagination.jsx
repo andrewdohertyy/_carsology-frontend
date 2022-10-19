@@ -2,12 +2,12 @@ import React from 'react'
 import "./Pagination.scss";
 // import  { useState } from 'react'
 
-const Pagination = ({coursesPerPage, totalCourses, paginate}) => {
+const Pagination = ({carsPerPage, totalCars, paginate}) => {
 
     // const [currentPage, setCurrentPage] = useState(0)
 
     const pageNumbers = [];
-    for (let i= 1; i<= Math.ceil(totalCourses / coursesPerPage); i++){
+    for (let i= 1; i<= Math.ceil(totalCars / carsPerPage); i++){
         pageNumbers.push(i);
     }
   return (

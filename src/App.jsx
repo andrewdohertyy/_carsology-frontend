@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 
 function App() {
 
-  const [courses, setCourses] = useState([]);
+  const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(false);
   const [url, setURL] = useState(
     "http://localhost:8080/cars"
@@ -16,17 +16,17 @@ function App() {
 
 
 
-  const getCourses = async () => {
+  const getCars = async () => {
     setLoading(true);
     const res = await fetch(url);
     const data = await res.json();
     console.log(data);
-    setCourses(data);
+    setCars(data);
     setLoading(false);
   };
 
   useEffect(() => {
-    getCourses();
+    getCars();
   }, [url], []);
 
   return (
@@ -37,12 +37,12 @@ function App() {
             <Route
             path="/"
             element = {
-            <Main courses={courses} getCourses={getCourses} setURL={setURL} setCourses={setCourses}/>
+            <Main cars={cars} getCars={getCars} setURL={setURL} setCars={setCars}/>
             }>
           </Route>
           <Route
               path="/moreInfo/:id"
-              element={<CourseMoreInfo courses={courses} />}
+              element={<CourseMoreInfo cars={cars} />}
           ></Route>
           </Routes>
           <Footer />

@@ -2,24 +2,26 @@ import React from 'react'
 import CourseCard from '../../components/CourseCard/CourseCard';
 import "./CardContainer.scss";
 
-const CardContainer = ({searchValue, currentCourses}) => {
+const CardContainer = ({searchValue, currentCars}) => {
 
-  console.log(currentCourses);
+  console.log(currentCars);
 
-  const filterCourses = (currentCourses, searchValue) => {
-    return currentCourses.filter((course) => course.name.toLowerCase().includes(searchValue.toLowerCase()))
+  const filterCars = (currentCars, searchValue) => {
+    return currentCars.filter((car) => car.make.toLowerCase().includes(searchValue.toLowerCase()))
   }
 
-const coursesJSX = (currentCourses) => {
-  return filterCourses(currentCourses, searchValue).map((course, index) => {
+const carsJSX = (currentCars) => {
+  return filterCars(currentCars, searchValue).map((car, index) => {
     return (
       <div key={index}>
           <CourseCard
-          id={course.id}
-          name={course.name}
-          image={course.image_url}
-          description={course.description}
-          tagline={course.tagline} 
+          id={car.id}
+          make={car.make}
+          image={car.image}
+          model={car.model}
+          price={car.price} 
+          type={car.type}
+          year={car.year}
           />
       </div>
   );
@@ -28,7 +30,7 @@ const coursesJSX = (currentCourses) => {
 
   return (
       <div className="container__grid">
-        {coursesJSX(currentCourses)}
+        {carsJSX(currentCars)}
       </div>
   );
   }

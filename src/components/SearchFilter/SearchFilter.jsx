@@ -1,10 +1,10 @@
 import React from 'react'
 import "./SearchFilter.scss"
 
-const SearchFilter = ({getSearchValue, courses, setCourses, getCourses, setURL}) => {
+const SearchFilter = ({getSearchValue, cars, setCars, getCars, setURL}) => {
 
   const clearFilters = () => {
-    getCourses();
+    getCars();
     setURL("https://api.punkapi.com/v2/beers?per_page=30");
   };
 

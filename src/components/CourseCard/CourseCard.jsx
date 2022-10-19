@@ -2,15 +2,19 @@ import React from "react";
 import "./CourseCard.scss";
 import { Link } from "react-router-dom";
 
-const CourseCard = ({ name, image, description, tagline, id }) => {
-  const trimmedDescription = description.substring(0, 50) + "...";
+const CourseCard = ({ make, image, model, year, id, price, type }) => {
+  // const trimmedDescription = description.substring(0, 50) + "...";
+
+  console.log(image);
 
   return (
     <div className="coursecard">
-      <img className="coursecard__img" src="{image}" alt="" />
-      <h3 className="coursecard__title">{name}</h3>
-      <p className="coursecard__price">{tagline}</p>
-      <p className="coursecard__info">{trimmedDescription}</p>
+      <img className="coursecard__image" src={image} alt="" />
+      <h3 className="coursecard__title">{make}</h3>
+      <p className="coursecard__price">{model}</p>
+      <p className="coursecard__info">{price}</p>
+      <p className="coursecard__year">{year}</p>
+      <p className="coursecard__type">{type}</p>
       <Link to={`/moreInfo/${id}`}>
         <button className="coursecard__moreinfo">More Info</button>
       </Link>

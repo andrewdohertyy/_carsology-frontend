@@ -7,39 +7,39 @@ import Pagination from "../../components/Pagination/Pagination";
 import "./Main.scss";
 
 
-const Main = ({courses, getCourses, setURL, setCourses}) => {
+const Main = ({cars, getCars, setURL, setCars}) => {
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [coursesPerPage] = useState(18);
+  const [carsPerPage] = useState(5);
   const [searchValue, setSearchValue] = useState("");
 
   const getSearchValue = (e) => {
     setSearchValue(e.target.value);
   };
 
-  const indexOfLastCourse = currentPage * coursesPerPage;
-  const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
-  const currentCourses = courses.slice(indexOfFirstCourse, indexOfLastCourse);
+  const indexOfLastCar = currentPage * carsPerPage;
+  const indexOfFirstCar = indexOfLastCar - carsPerPage;
+  const currentCars = cars.slice(indexOfFirstCar, indexOfLastCar);
 
 
 const paginate = pageNumber => {
   setCurrentPage(pageNumber);
 }
 
-  console.log(currentCourses);
+  // console.log(currentCourses);
 
 
   return (
     <div className="main">
       <Header title={"_Carsology - Find your next car here!"} />
-      <SearchFilter courses={courses} getSearchValue={getSearchValue} setCourses={setCourses} getCourses={getCourses} setURL={setURL}/>
+      <SearchFilter cars={cars} getSearchValue={getSearchValue} setCars={setCars} getCars={getCars} setURL={setURL}/>
       <CardContainer
-        currentCourses={currentCourses}
-        courses={courses}
+        currentCars={currentCars}
+        cars={cars}
         getSearchValue={getSearchValue}
         searchValue={searchValue}
       />
-      <Pagination coursesPerPage={coursesPerPage} totalCourses={courses.length} paginate={paginate}/>
+      <Pagination carsPerPage={carsPerPage} totalCars={cars.length} paginate={paginate}/>
     </div>
   );
 };
