@@ -13,8 +13,9 @@
 
 
     &__image {
-        width: 20vw;
-        height: 30vh;
+        
+       width: auto !important;
+       height: auto;
     }
     &__button {
         margin: 20px;
