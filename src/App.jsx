@@ -11,13 +11,16 @@ function App() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
   const [url, setURL] = useState(
-    "https://api.punkapi.com/v2/beers?per_page=80"
+    "http://localhost:8080/cars"
   );
+
+
 
   const getCourses = async () => {
     setLoading(true);
     const res = await fetch(url);
     const data = await res.json();
+    console.log(data);
     setCourses(data);
     setLoading(false);
   };
