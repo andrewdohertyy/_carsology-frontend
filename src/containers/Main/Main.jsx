@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../../components/Header/Header";
 import SearchFilter from "../../components/SearchFilter/SearchFilter";
 import CardContainer from "../CardContainer/CardContainer";

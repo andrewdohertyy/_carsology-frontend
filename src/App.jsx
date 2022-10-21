@@ -14,6 +14,8 @@ function App() {
     "http://localhost:8080/cars"
   );
 
+  console.log(cars);
+
 
 
   const getCars = async () => {
@@ -32,7 +34,7 @@ function App() {
   return (
     <Router>
       <>
-          <Nav title={"_Carsology"} />
+          <Nav title={"_Carsology"} cars={cars} setCars={setCars} setURL={setURL} getCars={getCars}/>
           <Routes>
             <Route
             path="/"
@@ -42,7 +44,8 @@ function App() {
           </Route>
           <Route
               path="/moreInfo/:id"
-              element={<CourseMoreInfo cars={cars} />}
+              element={<CourseMoreInfo cars={cars}
+              />}
           ></Route>
           </Routes>
           <Footer />

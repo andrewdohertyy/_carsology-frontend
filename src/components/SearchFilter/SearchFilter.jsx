@@ -1,58 +1,49 @@
-import React from 'react'
 import "./SearchFilter.scss"
 
 const SearchFilter = ({getSearchValue, cars, setCars, getCars, setURL}) => {
 
   const clearFilters = () => {
     getCars();
-    setURL("https://api.punkapi.com/v2/beers?per_page=30");
+    setURL("http://localhost:8080/cars");
   };
 
-  // const sortByAge = () => {
-  //   const ageAscending = [...courses].sort((a, b) => (a.age > b.age ? 1 : -1));
-  //   setCourses(ageAscending);
-  // };
+  const sortByAge = () => {
+    const ageAscending = [...cars].sort((a, b) => (a.year < b.year ? 1 : -1));
+    setCars(ageAscending);
+  };
 
   // const sortByMilage = () => {
   //   const milageAscending = [...courses].sort((a, b) => a.milage - b.milage);
   //   setCourses(milageAscending);
   // };
 
-  // const sortByPrice = () => {
-  //   const priceAscending = [...courses].sort((a, b) => a.price - b.price);
-  //   setCourses(priceAscending);
-  // };
+  const sortByPrice = () => {
+    const priceAscending = [...cars].sort((a, b) => b.price - a.price);
+    setCars(priceAscending);
+  };
 
 
-  // const handleSort = (e) => {
-  //   if (e.target.value === "Age A-Z") {
-  //     sortByAge();
-  //   } else if (e.target.value === "Milage Low-High") {
-  //     sortByMilage();
-  //   } else if (e.target.value === "Sort:") {
-  //     clearFilters();
-  //   } else if (e.target.value === "Price Low-High") {
-  //     sortByPrice();
-  //   }
-  // };
-
+  const handleSort = (e) => {
+    if (e.target.value === "Age") {
+      sortByAge();
+    // } else if (e.target.value === "Milage Low-High") {
+    //   sortByMilage();
+    } else if (e.target.value === "Sort:") {
+      clearFilters();
+    } else if (e.target.value === "Price High-Low") {
+      sortByPrice();
+    }
+  };
 
   return (
-
-    //add handle sort to select tag
     <div className='searchfilter'>
-
     <h3 className='searchfilter__title'>The best cars available here!</h3>
       <input className='searchfilter__search' type="text" placeholder='Search...' onChange={getSearchValue} />
-
-      
-
       <div>
-          <select className="searchfilter__dropdown" placeholder='Filter'>
-            <option>Filter</option>
-            <option>Lowest price</option>
-            <option>Alphabetical</option>
-            <option>Completion Time</option>
+          <select onChange={handleSort} className="searchfilter__dropdown" placeholder='Filter'>
+            <option>Sort:</option>
+            <option>Price High-Low</option>
+            <option>Age</option>
           </select>
         </div>
     </div>

@@ -1,6 +1,7 @@
 .title {
     padding: 30px;
     margin: 10px;
+    text-align: center;
 }
 
 .moreinfo {
@@ -9,20 +10,19 @@
     padding: 20px;
     background-color: #EAEAEA;
     border-radius: 20px;
-    box-shadow: 3px 4px grey;
 
+    text-align: center;
 
     &__image {
-        
-       width: auto !important;
+       width:  100%;
        height: auto;
     }
     &__button {
         margin: 20px;
         border-radius: 15px;
         padding: 10px;
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
         cursor: pointer;
     }
     &__name {
@@ -31,13 +31,13 @@
     &__description {
         padding: 10px;
     }
-    &__food {
+    &__price {
         padding: 20px;
     }
-    &__abv {
-        padding: 10px;
-    }
-    
+    &__swipe {
+        color: #EAEAEA;
+        font-size: xx-small;
+    }   
 }
 
 .home {
@@ -46,35 +46,41 @@
     &__text {
         padding: 20px;
         margin-top: 20px;
+        text-align: center;
     }
 }
 
 
 @media screen and (min-width: 768px){
 
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    &__images {
+        overflow-x: scroll;
+        display:flex
+    }
+    }
     .moreinfo {
-        width: 50%;
-        margin-left: 170px;
+        width: 70%;
     
         &__image {
-            width: 90px;
-            height: 300px;
+           height: auto;
+           width: 100%;
+           border: solid 2px  #EAEAEA;
+           border-radius: 10px;
+        }
+        &__swipe {
+            margin: 15px;
+            color: black !important;
+            font-size: x-large !important;
         }
     }
+
 }
 
-@media screen and (min-width: 1024px){
 
-    .moreinfo {
-        width: 50%;
-        margin-left: 235px;
-}
-}
 
-@media screen and (min-width: 1440px){
-
-    .moreinfo {
-        width: 50%;
-        margin-left: 350px;
-}
-}

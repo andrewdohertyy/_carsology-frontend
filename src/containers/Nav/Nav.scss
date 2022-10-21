@@ -43,7 +43,7 @@ html, body {
   margin-right: 40px;
 }
 
-.menu > li {
+.menu > option {
   margin: 0 1rem;
   overflow: hidden;
   cursor: pointer;
@@ -135,28 +135,32 @@ html, body {
   .menu {
     position: absolute;
     top: 0;
-    margin-top: 50px;
+    margin-top: 65px;
     left: 0;
     flex-direction: column;
     width: 100%;
     justify-content: center;
     align-items: center;
     margin-right: 0;
+    
   }
-  #menu-toggle ~ .menu li {
+  #menu-toggle ~ .menu option {
     height: 0;
     margin: 0;
     padding: 0;
     border: 0;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    display: none;
   }
-  #menu-toggle:checked ~ .menu li {
+  #menu-toggle:checked ~ .menu option {
     border-bottom: 3px solid orange;
     height: 2.5em;
     padding: 0.5em;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    display:flex;
+    
   }
-  .menu > li {
+  .menu > option {
     display: flex;
     justify-content: center;
     margin: 0;

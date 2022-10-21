@@ -4,40 +4,42 @@ import { Link } from "react-router-dom";
 import userLogo from "../../assets/icons8-male-user-32.png";
 import car from "../../assets/icons8-car-30.png";
 
-const Nav = ({ title }) => {
-  // const getCarsFilter = () => {
-  //   setURL(
-  //     "https://api.punkapi.com/v2/beers?brewed_before=01-2010?page=1&per_page=30"
-  //   );
-  // };
+const Nav = ({ title, cars, setCars, getCars, setURL }) => {
 
-  // const getAlcoholFilter = () => {
-  //   const carFilter = courses.filter((course) => course.type == "car");
-  //   setCourses(carFilter);
-  // };
+  const clearFilters = () => {
+    getCars();
+    setURL("http://localhost:8080/cars");
+  };
 
-  // const getVanFilter = () => {
-  //   const vanFilter = courses.filter((course) => course.type == "van");
-  //   setCourses(vanFilter);
-  // };
 
-  // const getSupercarFilter = () => {
-  //   const supercarFilter = courses.filter((course) => course.type == "supercar");
-  //   setCourses(supercarFilter);
-  // };
+  const getCarFilter = () => {
+    const carFilter = cars.filter((car) => car.type == "car");
+    setCars(carFilter);
+  };
 
-  // const handleSelect = (e){
-  //   if(e.target.value === "Cars"){
-  //     getCarsFilter();
-  //   } else if (e.target.value === "Vans"){
-  //     getVansFilter();
-  //   } else if (e.target.value === "Supercars"){
-  //     getSupercarsFilter();
-  //   }
-  // };
+  const getVanFilter = () => {
+    const vanFilter = cars.filter((car) => car.type == "van");
+    setCars(vanFilter);
+  };
+
+  const getSupercarFilter = () => {
+    const supercarFilter = cars.filter((car) => car.type == "supercar");
+    setCars(supercarFilter);
+  };
+
+  const handleSelect = (e) => {
+    if(e.target.value == "Cars"){
+      getCarFilter();
+    } else if (e.target.value == "Vans"){
+      getVanFilter();
+    } else if (e.target.value == "Supercars"){
+      getSupercarFilter();
+    } else if (e.target.value == "All"){
+      clearFilters();
+    }
+  };
 
   return (
-    //add handleSelect to ul class menu
 
     <div className="nav">
       <section class="top-nav">
@@ -51,10 +53,11 @@ const Nav = ({ title }) => {
         <label class="menu-button-container" for="menu-toggle">
           <div class="menu-button"></div>
         </label>
-        <ul class="menu">
-          <li>Cars</li>
-          <li>Vans</li>
-          <li>Supercars</li>
+        <ul class="menu" onClick={handleSelect}>
+          <option>All</option>
+          <option>Cars</option>
+          <option>Vans</option>
+          <option>Supercars</option>
           <img className="userLogo" src={userLogo} alt="My Profile" />
         </ul>
       </section>
