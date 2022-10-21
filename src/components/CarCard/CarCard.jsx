@@ -1,8 +1,8 @@
 import React from "react";
-import "./CourseCard.scss";
+import "./CarCard.scss";
 import { Link } from "react-router-dom";
 
-const CourseCard = ({ make, image, model, year, id, price }) => {
+const CarCard = ({ make, image, model, year, id, price }) => {
   // const trimmedDescription = description.substring(0, 50) + "...";
 
 
@@ -21,4 +21,4 @@ const CourseCard = ({ make, image, model, year, id, price }) => {
   );
 };
 
-export default CourseCard;
+export default CarCard;

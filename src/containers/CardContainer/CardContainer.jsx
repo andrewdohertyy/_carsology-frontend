@@ -1,5 +1,5 @@
 import React from 'react'
-import CourseCard from '../../components/CourseCard/CourseCard';
+import CarCard from '../../components/CarCard/CarCard';
 import "./CardContainer.scss";
 
 const CardContainer = ({searchValue, currentCars}) => {
@@ -14,7 +14,7 @@ const carsJSX = (currentCars) => {
   return filterCars(currentCars, searchValue).map((car, index) => {
     return (
       <div key={index}>
-          <CourseCard
+          <CarCard
           id={car.id}
           make={car.make}
           image={car.image}
