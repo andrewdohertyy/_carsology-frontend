@@ -167,7 +167,7 @@ html, body {
     padding: 0.5em 0;
     width: 100%;
     color: white;
-    background-color: #2d3737;;
+    background-color: #2d3737;
   }
 
   .menu > img {
@@ -179,6 +179,10 @@ html, body {
   }
 
   .nav__car {
+    display: none;
+  }
+
+  .userLogo {
     display: none;
   }
 }

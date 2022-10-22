@@ -1,15 +1,15 @@
 .title {
   padding: 30px;
-  margin: 10px;
+  margin: 20px;
   text-align: center;
 }
 
 .moreinfo {
   border: solid lightgray 3px;
   padding: 20px;
-  background-color: #eaeaea;
+  color: white;
   border-radius: 20px;
-
+  background-color: #2d3737;
   text-align: center;
 
   &__image {
@@ -18,11 +18,12 @@
   }
   &__button {
     margin: 20px;
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 10px;
-    background-color: white;
-    color: black;
+    background-color: orange;
+    color: white;
     cursor: pointer;
+    border: solid grey 1px
   }
   &__name {
     padding: 10px;
@@ -34,8 +35,25 @@
     padding: 20px;
   }
   &__swipe {
-    color: #eaeaea;
+    color:  #2d3737;
     font-size: xx-small;
+  }
+  &__tags {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    list-style: none;
+    justify-content: center;
+    margin: 1rem;
+  }
+  &__tag {
+    background-color: orange;
+    color: white;
+    padding: 5px;
+    border-radius: 20px;
+  }
+  &__facts {
+    margin-bottom: 2rem;
   }
 }
 
@@ -62,6 +80,7 @@
     }
   }
   .moreinfo {
+
     width: 70%;
 
     &__image {
@@ -72,7 +91,7 @@
     }
     &__swipe {
       margin: 15px;
-      color: black !important;
+      color: white;
       font-size: large !important;
     }
   }

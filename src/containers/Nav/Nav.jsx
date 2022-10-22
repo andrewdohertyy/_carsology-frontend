@@ -1,7 +1,7 @@
 import React from "react";
 import "./Nav.scss";
 import { Link } from "react-router-dom";
-import userLogo from "../../assets/icons8-male-user-32.png";
+import add from "../../assets/add_white_button_icon_227863.png";
 import car from "../../assets/icons8-car-30.png";
 
 const Nav = ({ title, cars, setCars, getCars, setURL }) => {
@@ -58,7 +58,9 @@ const Nav = ({ title, cars, setCars, getCars, setURL }) => {
           <option>Cars</option>
           <option>Vans</option>
           <option>Supercars</option>
-          <img className="userLogo" src={userLogo} alt="My Profile" />
+          <Link id="new" to="/cars/create">
+          <img className="userLogo" src={add} alt="My Profile" />
+          </Link>
         </ul>
       </section>
     </div>
