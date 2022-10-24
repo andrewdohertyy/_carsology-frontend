@@ -2,7 +2,7 @@ import React from "react";
 import "./CarCard.scss";
 import { Link } from "react-router-dom";
 
-const CarCard = ({ make, image, model, year, id, price }) => {
+const CarCard = ({ make, image, model, year, id, price, fuelType, milage, shortDescription, gearbox }) => {
   // const trimmedDescription = description.substring(0, 50) + "...";
 
 
@@ -11,13 +11,13 @@ const CarCard = ({ make, image, model, year, id, price }) => {
     <div className="carcard">
       <img className="carcard__image" src={image} alt="car" />
       <h2 className="carcard__title">{make} ({model})</h2>
-      <p className="carcard__facts">E400 4Matic AMG Line Premium Plus 2dr 9G-Tronic</p>
+      <p className="carcard__facts">{shortDescription}</p>
 
       <ul className="carcard__tags">
             <li className="carcard__tag">{year}</li>
-            <li className="carcard__tag">5,000 Miles</li>
-            <li className="carcard__tag">Petrol</li>
-            <li className="carcard__tag">Automatic</li>
+            <li className="carcard__tag">{milage} Miles</li>
+            <li className="carcard__tag">{fuelType}</li>
+            <li className="carcard__tag">{gearbox}</li>
           </ul>
       <h3 className="carcard__price">Price: £{price}</h3>
       

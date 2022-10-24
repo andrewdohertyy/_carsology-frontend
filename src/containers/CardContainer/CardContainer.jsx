@@ -22,6 +22,11 @@ const carsJSX = (currentCars) => {
           price={car.price} 
           type={car.type}
           year={car.year}
+          milage={car.milage}
+          fuelType={car.fuelType}
+          gearbox={car.gearbox}
+          description={car.description}
+          shortDescription={car.shortDescription}
           />
       </div>
   );

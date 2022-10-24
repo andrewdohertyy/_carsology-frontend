@@ -58,7 +58,7 @@ const Nav = ({ title, cars, setCars, getCars, setURL }) => {
           <option>Cars</option>
           <option>Vans</option>
           <option>Supercars</option>
-          <Link id="new" to="/cars/create">
+          <Link id="new" to="/car">
           <img className="userLogo" src={add} alt="My Profile" />
           </Link>
         </ul>

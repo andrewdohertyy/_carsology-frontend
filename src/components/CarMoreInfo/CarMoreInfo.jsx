@@ -5,12 +5,12 @@ import { useState, useEffect } from "react";
 import "./CarMoreInfo.scss";
 import Form from "../../components/Form/Form";
 
-const CarMoreInfo = ({ cars }) => {
+const CarMoreInfo = ({cars}) => {
   const { id } = useParams();
   // const [showForm, setShowForm] = useState(false);
-  const [carData, setCar] = useState(null);
+  const [car, setCar] = useState(null);
+  const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
-
   const clickedCars = cars.filter((car) => car.id == id);
   // const handleShowForm = () => setShowForm(!showForm);
 
@@ -24,7 +24,29 @@ const CarMoreInfo = ({ cars }) => {
     getCarById(id);
   }, [id]);
 
-  const handleDelete = async (carData) => {
+
+  const handleUpdate = async updatedCar => {
+    const result = await fetch(`http://localhost:8080/cars/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedCar),
+    });
+
+    if (result.ok) {
+      alert("Car updated");
+      setCar(updatedCar);
+      
+    } else {
+      const message = await result.text();
+      alert(message);
+    }
+  };
+
+
+
+  const handleDelete = async (updatedCar) => {
     const result = await fetch(`http://localhost:8080/cars/${id}`, {
       method: "DELETE",
       headers: {
@@ -40,6 +62,9 @@ const CarMoreInfo = ({ cars }) => {
       alert(message);
     }
   };
+
+  const handleShowForm = () => setShowForm(!showForm);
+
 
   return (
     <>
@@ -69,19 +94,19 @@ const CarMoreInfo = ({ cars }) => {
           <h1 className="moreinfo__name">
             {clickedCars[0].make} {clickedCars[0].model}
           </h1>
-          <p className="moreinfo__facts">E400 4Matic AMG Line Premium Plus 2dr 9G-Tronic</p>
+          <p className="moreinfo__facts">{clickedCars[0].shortDescription}</p>
           <ul className="moreinfo__tags">
             <li className="moreinfo__tag">{clickedCars[0].year}</li>
-            <li className="moreinfo__tag">5,000 Miles</li>
-            <li className="moreinfo__tag">Petrol</li>
-            <li className="moreinfo__tag">Automatic</li>
+            <li className="moreinfo__tag">{clickedCars[0].milage} Miles</li>
+            <li className="moreinfo__tag">{clickedCars[0].fuelType}</li>
+            <li className="moreinfo__tag">{clickedCars[0].gearbox}</li>
           </ul>
           
-          <p className="moreinfo__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam reiciendis iste, doloribus officiis est laudantium aliquam ab quo aperiam iusto sequi qui vitae culpa adipisci, veniam corporis ipsam laboriosam eaque. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste neque veritatis assumenda consequuntur tempore ullam recusandae rerum dolorum cumque id! Sint recusandae voluptatum, qui aperiam nobis similique porro facere adipisci. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur culpa laudantium ut ab a commodi quos iure nulla vel amet, nobis quo labore perspiciatis alias soluta provident accusantium asperiores harum.</p>
+          <p className="moreinfo__description">{clickedCars[0].description} Drop into our showroom between 9am-5pm Monday - Sunday to take a look and request a test-drive! Our prices are checked daily, and our group is one of the UKs fastest growing car dealer groups. We also offer competitive part exchange valuations and will do all that we can to ensure you leave our nationwide car dealerships as a happy guest.</p>
           <h2 className="moreinfo__price">Price: £{clickedCars[0].price}</h2>
           <button
             className="moreinfo__edit moreinfo__button"
-            // onClick={handleShowForm}
+            onClick={handleShowForm}
           >
             Edit
           </button>
@@ -96,6 +121,7 @@ const CarMoreInfo = ({ cars }) => {
           <p className="home__text">Click the logo at the top to go home!</p>
         </div>
       </div>
+      {showForm && <Form defaultFormState={car} formTitle={"Edit Car"} handleSubmit={handleUpdate} />}
     </>
   );
 };

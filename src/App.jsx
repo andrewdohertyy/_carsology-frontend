@@ -8,15 +8,12 @@ import NewCar from "./components/NewCar/NewCar";
 
 function App() {
   const [cars, setCars] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [url, setURL] = useState("http://localhost:8080/cars");
 
   const getCars = async () => {
-    setLoading(true);
     const res = await fetch(url);
     const data = await res.json();
     setCars(data);
-    setLoading(false);
   };
 
   useEffect(
@@ -49,9 +46,7 @@ function App() {
               />
             }
           ></Route>
-          <Route 
-          path="/cars/create" 
-          element={<NewCar />} />
+          <Route path="/car" element={<NewCar />} />
           <Route
             path="/moreInfo/:id"
             element={<CarMoreInfo cars={cars} />}
