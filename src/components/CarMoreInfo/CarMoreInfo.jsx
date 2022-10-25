@@ -67,13 +67,13 @@ const CarMoreInfo = ({cars}) => {
   };
 
   const handleShowForm = () => setShowForm(!showForm);
-
+console.log(clickedCars[0]);
 
   return (
     <>
       <div className="container">
         <h1 className="title">
-          {clickedCars[0].make} {clickedCars[0].model}{" "}
+          {clickedCars[0].make} {clickedCars[0].model}
         </h1>
         <div className="moreinfo">
           <div className="container__images">
