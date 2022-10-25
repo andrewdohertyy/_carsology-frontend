@@ -1,6 +1,6 @@
 import React from "react";
 import "./Nav.scss";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import add from "../../assets/add_white_button_icon_227863.png";
 import car from "../../assets/icons8-car-30.png";
 
@@ -39,11 +39,16 @@ const Nav = ({ title, cars, setCars, getCars, setURL }) => {
     }
   };
 
+  const reloadPage = () => {
+    Navigate("/")
+    window.location.reload();
+  }
+
   return (
 
     <div className="nav">
       <section class="top-nav">
-        <Link id="title" to="/">
+        <Link onClick={reloadPage} id="title" to="/">
           <nav className="nav__title--container">
             <div className="nav__title">{title}</div>
             <img className="nav__car" src={car} alt="" />

@@ -7,19 +7,20 @@ import Form from "../../components/Form/Form";
 
 const CarMoreInfo = ({cars}) => {
   const { id } = useParams();
-  // const [showForm, setShowForm] = useState(false);
   const [car, setCar] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
-  const clickedCars = cars.filter((car) => car.id == id);
-  // const handleShowForm = () => setShowForm(!showForm);
 
-  const getCarById = async (id) => {
+  const clickedCars = cars.filter((car) => car.id == id);
+
+  const getCarById = async id => {
     const url = `http://localhost:8080/cars/${id}`;
     const response = await fetch(url);
     const carData = await response.json();
     setCar(carData);
   };
+
+
   useEffect(() => {
     getCarById(id);
   }, [id]);
@@ -37,6 +38,8 @@ const CarMoreInfo = ({cars}) => {
     if (result.ok) {
       alert("Car updated");
       setCar(updatedCar);
+      navigate("/");
+      window.location.reload();
       
     } else {
       const message = await result.text();
@@ -46,7 +49,7 @@ const CarMoreInfo = ({cars}) => {
 
 
 
-  const handleDelete = async (updatedCar) => {
+  const handleDelete = async updatedCar => {
     const result = await fetch(`http://localhost:8080/cars/${id}`, {
       method: "DELETE",
       headers: {
