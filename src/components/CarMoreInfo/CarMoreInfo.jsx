@@ -67,7 +67,6 @@ const CarMoreInfo = ({cars}) => {
   };
 
   const handleShowForm = () => setShowForm(!showForm);
-console.log(clickedCars[0]);
 
   return (
     <>
