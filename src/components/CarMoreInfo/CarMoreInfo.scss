@@ -73,6 +73,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 
     &__images {
       overflow-x: scroll;
@@ -94,5 +95,25 @@
       color: white;
       font-size: large !important;
     }
+    &__button {
+      padding: 20px;
+      font-size: large;
+      border-radius: 50px;
+    }
   }
+}
+
+@media screen and (min-width: 1440px){
+
+  .container {
+    font-size: x-large;
+  }
+
+  .moreinfo {
+
+    &__button {
+      font-size: x-large;
+    }
+  }
+  
 }

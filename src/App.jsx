@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CarMoreInfo from "./components/CarMoreInfo/CarMoreInfo";
 import { useState, useEffect } from "react";
 import NewCar from "./components/NewCar/NewCar";
+import "../src/App.scss";
 
 function App() {
   const [cars, setCars] = useState([]);

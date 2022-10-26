@@ -6,7 +6,9 @@
   align-items: center;
   padding: 2rem;
   gap: 5px;
-  border: solid 1px black;
+  color: white;
+  border-radius: 20px;
+  background-color: #2d3737;
 
   &__input--text {
       display: flex;
@@ -35,33 +37,24 @@
   }
 
   &__submit {
-      background-color: white;
+      background-color: orange;
       padding: 0.5rem;
-      color: black;
       border-radius: 1rem;
       margin-right: 1rem;
+      margin: 20px;
+      border-radius: 20px;
+      padding: 20px;
+      color: white;
+      cursor: pointer;
+      border: solid grey 1px
   }
 }
 
-// .form {
-//   display: flex;
-//   flex-direction: column;
-
-//   &__submit {
-//     background-color: white;
-//     padding: 0.5rem;
-//     color: black;
-//     border-radius: 1rem;
-//     margin-right: 1rem;
-//   }
-//   &__input--text {
-//           display: flex;
-//           flex-direction: column;
-//       }
-// }
-
 .input {
   margin-bottom: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
 }
 
 label {
@@ -76,12 +69,27 @@ label {
     display: flex;
     flex-direction: row;
   }
+  .input {
+    padding: 10px;
+  }
 }
 
 @media screen and (min-width: 1440px){
 
   .form {
-    width: 60%
+    width: 80%
+    }
+  .input {
+    padding: 1rem;
+    width: 20rem;
   }
-  
+  label {
+    font-size: x-large;
+  }
+  .form__submit {
+    padding: 20px;
+    border-radius: 30px;
+    font-size: x-large;
+  }
+
 }
