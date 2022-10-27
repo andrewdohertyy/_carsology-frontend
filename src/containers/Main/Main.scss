@@ -1,5 +1,8 @@
+@use "../../styles/variables" as *;
+
 .main {
     margin-left: 20px;
     margin-right: 20px;
-    background-color: #fafafa;
+    background-color: $color-grey;
+    font-family: $font-primary;
 }

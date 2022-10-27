@@ -1,3 +1,5 @@
+@use "../../styles/variables" as *;
+
 .title {
   padding: 30px;
   margin: 20px;
@@ -5,11 +7,11 @@
 }
 
 .moreinfo {
-  border: solid lightgray 3px;
+  border: solid $color-light-grey 3px;
   padding: 20px;
-  color: white;
+  color: $color-white;
   border-radius: 20px;
-  background-color: #2d3737;
+  background-color: $color-dark;
   text-align: center;
 
   &__image {
@@ -20,10 +22,10 @@
     margin: 20px;
     border-radius: 20px;
     padding: 10px;
-    background-color: orange;
-    color: white;
+    background-color: $color-orange;
+    color: $color-white;
     cursor: pointer;
-    border: solid grey 1px
+    border: solid $color-grey 1px
   }
   &__name {
     padding: 10px;
@@ -35,7 +37,7 @@
     padding: 20px;
   }
   &__swipe {
-    color:  #2d3737;
+    color:  $color-dark;
     font-size: xx-small;
   }
   &__tags {
@@ -47,8 +49,8 @@
     margin: 1rem;
   }
   &__tag {
-    background-color: orange;
-    color: white;
+    background-color: $color-orange;
+    color: $color-white;
     padding: 5px;
     border-radius: 20px;
   }
@@ -87,12 +89,12 @@
     &__image {
       height: auto;
       width: 100%;
-      border: solid 2px #eaeaea;
+      border: solid 2px $color-light-grey;
       border-radius: 10px;
     }
     &__swipe {
       margin: 15px;
-      color: white;
+      color: $color-white;
       font-size: large !important;
     }
     &__button {

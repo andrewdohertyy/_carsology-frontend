@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway);
+@use "../../styles/variables" as *;
+
 h2 {
   vertical-align: center;
   text-align: center;
@@ -12,13 +13,12 @@ html, body {
 #title {
   cursor: pointer;
   text-decoration: none;
-  color: white;
+  color: $color-white;
 }
 
 * {
   font-family: "Raleway";
   box-sizing: border-box;
-  
 }
 
 .top-nav {
@@ -26,9 +26,8 @@ html, body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #00BAF0;
-  background: #2d3737;
-  color: white;
+  background: $color-dark;
+  color: $color-white;
   height: 80px;
   padding: 1em;
   
@@ -39,7 +38,7 @@ html, body {
   flex-direction: row;
   list-style-type: none;
   margin: 0;
-  color: white;
+  color: $color-white;
   padding: 0;
   margin-right: 40px;
   font-size: large;
@@ -71,7 +70,7 @@ html, body {
 .menu-button::before,
 .menu-button::after {
   display: block;
-  background-color: #fff;
+  background-color: $color-white;
   position: absolute;
   height: 4px;
   width: 30px;
@@ -81,7 +80,7 @@ html, body {
 }
 
 .nav {
-  border-bottom: solid orange 10px;
+  border-bottom: solid $color-orange 10px;
 }
 
 .menu-button::before {
@@ -120,7 +119,7 @@ html, body {
 }
 
 .nav__title {
-  color: white;
+  color: $color-white;
   padding-top: 3px;
   font-weight: bolder;
   font-size: xx-large;
@@ -156,7 +155,7 @@ html, body {
     display: none;
   }
   #menu-toggle:checked ~ .menu option {
-    border-bottom: 3px solid orange;
+    border-bottom: 3px solid $color-orange;
     height: 2.5em;
     padding: 0.5em;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -169,8 +168,8 @@ html, body {
     margin: 0;
     padding: 0.5em 0;
     width: 100%;
-    color: white;
-    background-color: #2d3737;
+    color: $color-white;
+    background-color: $color-dark;
   }
 
   .menu > img {

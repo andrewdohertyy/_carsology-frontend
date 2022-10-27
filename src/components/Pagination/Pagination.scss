@@ -1,8 +1,9 @@
+@use "../../styles/variables" as *;
 .pagination {
     display: flex;
     list-style: none;
     justify-content: center;
-    color: #2d3737;;
+    color: $color-dark;
 
     &__items {
         padding: 10px;
@@ -11,15 +12,15 @@
     }
     &__link {
         border-style :none;
-        background-color: white;
+        background-color: $color-white;
         font-size: large;
         cursor: pointer;
     }
     &__button {
         padding: 5px 10px 5px 10px;
         border-radius: 5px;
-        background-color: white;
-        border: 1px grey solid;
+        background-color: $color-white;
+        border: 1px $color-grey solid;
         cursor: pointer;
     }
 }

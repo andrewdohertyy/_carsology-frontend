@@ -1,18 +1,21 @@
+@use "../../styles/variables" as *;
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: $font-primary;
 }
 
 .carcard {
-  border: solid 1px lightgrey;
+  border: solid 1px $color-light-grey;
   border-radius: 5px;
   width: 100%;
   padding: 10px;
-  color: #2d3737;
+  color: $color-dark;
   text-align: center;
   margin-bottom: 10px;
-  box-shadow: 1px 1px#2d3737;
+  box-shadow: 1px 1px $color-dark-grey;
 
   &__image {
     width: 100%;
@@ -38,8 +41,8 @@
     margin: 1rem;
   }
   &__tag {
-    background-color: #2d3737;
-    color: white;
+    background-color: $color-dark;
+    color: $color-white;
     font-size: small;
     padding: 5px;
     border-radius: 20px;
@@ -49,10 +52,10 @@
     margin: 20px;
     border-radius: 20px;
     padding: 10px;
-    background-color: #2d3737;
-    color: white;
+    background-color: $color-dark;
+    color: $color-white;
     cursor: pointer;
-    border: solid orange 1.5px;
+    border: solid $color-orange 1.5px;
   }
 }
 
@@ -63,5 +66,5 @@
 }
 .carcard:hover {
   opacity: 0.8;
-  background-color: white;
+  background-color: $color-white;
 }

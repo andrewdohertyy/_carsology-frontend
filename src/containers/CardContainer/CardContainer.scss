@@ -1,3 +1,5 @@
+@use "../../styles/variables" as *;
+
 @media screen and (min-width: 768px) {
     .container__grid {
 
@@ -9,5 +11,6 @@
         margin: 20px;
         justify-content: center;
         align-items: center;
+        font-family: $font-primary;
   }
 }
