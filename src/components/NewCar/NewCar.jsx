@@ -18,7 +18,6 @@ const NewCar = () => {
     if (res.ok) {
       alert("Car added");
       navigate("/");
-      window.location.reload();
     } else {
       const message = await res.text();
       alert(message);
@@ -29,7 +28,9 @@ const NewCar = () => {
 
 
   return (
+    <>
     <Form handleSubmit={handleSubmit} defaultFormState={defaultFormState} formTitle={"New Car"}/>
+    </>
   );
 };
 
