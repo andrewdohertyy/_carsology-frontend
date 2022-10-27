@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: $font-primary;
+  font-family: $font-secondary;
 }
 
 .carcard {
@@ -16,10 +16,12 @@
   text-align: center;
   margin-bottom: 10px;
   box-shadow: 1px 1px $color-dark-grey;
+ 
 
   &__image {
-    width: 100%;
+    width:100%;
     height: auto;
+    
     margin-bottom: 1.25rem;
   }
 

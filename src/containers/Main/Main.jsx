@@ -23,10 +23,8 @@ const Main = ({cars, getCars, setURL, setCars}) => {
 
 const paginate = pageNumber => {
   setCurrentPage(pageNumber);
+  window.scrollTo(150,150)
 }
-
-  // console.log(currentCourses);
-
 
   return (
     <div className="main">

@@ -23,7 +23,7 @@ const CarMoreInfo = ({cars}) => {
 
   useEffect(() => {
     getCarById(id);
-  }, [id]);
+  }, [id, car]);
 
 
   const handleUpdate = async updatedCar => {
@@ -39,7 +39,7 @@ const CarMoreInfo = ({cars}) => {
       alert("Car updated");
       setCar(updatedCar);
       navigate("/");
-      window.location.reload();
+      // window.location.reload();
       
     } else {
       const message = await result.text();

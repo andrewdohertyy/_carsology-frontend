@@ -21,8 +21,7 @@ function App() {
     () => {
       getCars();
     },
-    [url],
-    []
+    [url, cars]
   );
 
   return (

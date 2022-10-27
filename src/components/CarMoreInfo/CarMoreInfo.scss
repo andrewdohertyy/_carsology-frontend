@@ -1,9 +1,13 @@
 @use "../../styles/variables" as *;
 
+* {
+  font-family: $font-secondary;
+}
 .title {
   padding: 30px;
   margin: 20px;
   text-align: center;
+  
 }
 
 .moreinfo {
