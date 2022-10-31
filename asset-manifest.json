@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/_carsology-frontend/static/css/main.b214b5c4.css",
+    "main.js": "/_carsology-frontend/static/js/main.cd9356e4.js",
+    "static/js/787.959a4833.chunk.js": "/_carsology-frontend/static/js/787.959a4833.chunk.js",
+    "index.html": "/_carsology-frontend/index.html",
+    "main.b214b5c4.css.map": "/_carsology-frontend/static/css/main.b214b5c4.css.map",
+    "main.cd9356e4.js.map": "/_carsology-frontend/static/js/main.cd9356e4.js.map",
+    "787.959a4833.chunk.js.map": "/_carsology-frontend/static/js/787.959a4833.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b214b5c4.css",
+    "static/js/main.cd9356e4.js"
+  ]
+}
