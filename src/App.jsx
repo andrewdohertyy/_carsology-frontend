@@ -48,7 +48,7 @@ function App() {
     () => {
       getCars();
     },
-    [url, cars]
+    [url]
   );
 
   return (

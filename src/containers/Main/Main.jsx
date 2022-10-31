@@ -9,7 +9,7 @@ import "./Main.scss";
 const Main = ({cars, getCars, setURL, setCars}) => {
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [carsPerPage] = useState(6);
+  const [carsPerPage] = useState(3);
   const [searchValue, setSearchValue] = useState("");
 
   const getSearchValue = (e) => {

@@ -1,5 +1,6 @@
 {
   "name": "carsology-frontend",
+  "homepage": "https://andrewdohertyy.github.io/_carsology-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,6 +16,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+   "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -39,6 +42,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
+    "gh-pages": "^4.0.0",
     "jest": "^27.5.1",
     "jest-environment-jsdom": "^29.2.1"
   }
